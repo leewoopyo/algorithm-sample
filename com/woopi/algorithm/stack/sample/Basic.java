@@ -11,13 +11,13 @@ public class Basic {
 		stack.push("Data2");
 		stack.push("Data3");
 
-		// Stack에서 데이터 꺼내기
+		// Stack에서 데이터 꺼내면서 출력
 		System.out.println(stack.pop());
 
 		// Stack의 최상단 값 출력(제거하지 않음)
 		System.out.println(stack.peek());
 
-		// Stack에서 데이터 꺼내기
+		// Stack에서 데이터 꺼내면서 출력
 		System.out.println(stack.pop());
     }
 }
