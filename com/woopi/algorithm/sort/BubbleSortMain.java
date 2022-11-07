@@ -1,4 +1,4 @@
-package com.woopi.algorithm.sort.bubble_sort;
+package com.woopi.algorithm.sort;
 
 import java.util.logging.Logger;
 
