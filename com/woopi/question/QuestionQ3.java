@@ -2,9 +2,7 @@ package com.woopi.question;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -15,7 +13,8 @@ import java.util.Stack;
  */
 public class QuestionQ3 {
     public static void main(String[] args) throws Exception {
-        new QuestionQ3().solution_1();
+        //new QuestionQ3().solution_1();
+        new QuestionQ3().solution_2();
     }
 
     public static void solution_1 () throws Exception {
@@ -51,5 +50,37 @@ public class QuestionQ3 {
         for (String str : resultList) {
             System.out.println(str);
         }
+    }
+
+    public static void solution_2 () throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+
+        int num = Integer.parseInt(br.readLine());
+        int[] stack = new int[num];
+        int stackIdx = 0;
+        int top = 0;
+        
+        for (int i = 0; i < num; i++) {
+            int data = Integer.parseInt(br.readLine());
+            if (data > top) {
+                for (int j = top+1; j <= data; j++) {
+                    stack[stackIdx] = j;
+                    stackIdx++;
+                    sb.append("+").append("\n");
+                }
+                stackIdx--;
+                sb.append("-").append("\n");   
+                top = data;
+            } else if (stack[stackIdx-1] == data) {
+                stackIdx--;
+                sb.append("-").append("\n");   
+            } else {
+                System.out.print("NO");
+        		System.exit(0);
+            }
+        }
+        System.out.print(sb);
     }
 }
